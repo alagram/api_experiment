@@ -16,6 +16,10 @@ class MessagesController < ApplicationController
   end
 
   def message
-    @message = MessageService.get_message
+    begin
+      @message = MessageService.get_message
+    rescue => e
+      raise e
+    end
   end
 end
