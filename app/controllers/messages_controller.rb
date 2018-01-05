@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
     begin
       @message = MessageService.get_message
     rescue => e
-      raise e
+      raise e, 'something very bad happend! Please try again in a few minutes.'
     end
   end
 end
